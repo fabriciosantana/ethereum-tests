@@ -22,25 +22,30 @@ module.exports = {
     development: {
       host: "127.0.0.1",
       port: 8545,
-      network_id: "*",
+      network_id: "*"
     },
     truffleNet: {
       host: "127.0.0.1",
       port: 9545,
       network_id: "*",
       defaultEtherBalance: 500,
-      from:"0xa4abdf7e66090bc9ee750fe3920b431d08f73ad3",
+      from:"0xa4abdf7e66090bc9ee750fe3920b431d08f73ad3"
     },
     ganacheNet: {
       host: "127.0.0.1",
       port: 7545,
       network_id: "*",
       defaultEtherBalance: 500,
-      from:"0x974517d96d096DF0828A4660489D4604741F2C40",
+      from:"0x974517d96d096DF0828A4660489D4604741F2C40"
     },
-    loc_development_development: {
+    ganacheclidocker: {
       network_id: "*",
-      port: 8545,
+      port: 8566,
+      host: "127.0.0.1"
+    },
+    ganachecoredocker: {
+      network_id: "*",
+      port: 8567,
       host: "127.0.0.1"
     },
     kovan: {

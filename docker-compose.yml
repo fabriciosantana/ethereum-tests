@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+    ganache-cli:
+        container_name: ganache-cli
+        #build: .
+        image: trufflesuite/ganache-cli
+        ports:
+            - "8566:8545"
+
+    #ganache-core:
+    #    container_name: ganache-core
+    #    image: trufflesuite/ganache-core
+    #    ports:
+    #        - "8567:8545"
