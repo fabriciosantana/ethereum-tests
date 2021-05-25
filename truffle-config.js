@@ -1,3 +1,4 @@
+
 console.log("### STARTING MIGRATION <<<");
 
 const HDWalletProvider = require("@truffle/hdwallet-provider"); //require("truffle-hdwallet-provider");
@@ -19,6 +20,7 @@ let provider = new ethers.providers.InfuraProvider("kovan", "c6694c8069784d1e903
 
 module.exports = {
   networks: {
+    migrations_directory: "./migratin",
     development: {
       host: "127.0.0.1",
       port: 8545,
@@ -52,18 +54,23 @@ module.exports = {
       /*provider: function() {
         return new HDWalletProvider(mnemonic, "https://kovan.infura.io/v3/c6694c8069784d1e90309bed25d0743d");
       },*/
-      provider: () => new HDWalletProvider(mnemonic, "https://kovan.infura.io/v3/c6694c8069784d1e90309bed25d0743d"),
+      //provider: () => new HDWalletProvider(mnemonic, "https://kovan.infura.io/v3/c6694c8069784d1e90309bed25d0743d"),
       //provider: new HDWalletProvider(mnemonic, "wss://kovan.infura.io/ws/v3/c6694c8069784d1e90309bed25d0743d"),
       //provider: () => kovan,
       //provider: () => new PrivateKeyProvider("30be48c30f3d9ec1a4fe78c72696dd87338ba2f397d809e81e0a9117f0542c53", "https://kovan.infura.io/v3/c6694c8069784d1e90309bed25d0743d"),
       //provider: () => provider,
+      //host: "https://kovan.infura.io/v3/c6694c8069784d1e90309bed25d0743d",
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://kovan.infura.io/v3/c6694c8069784d1e90309bed25d0743d");
+      },
       network_id: 42,
       from:"0x82b1BF154B55eCC5E45c7E24a6283da06368000D",
       timeoutBlocks: 50000,
       websockets: true,
       networkCheckTimeout: 10000000,
-      gas: 3525872,
-      gasPrice: 62000000000
+      gas: "auto",
+      gasPrice: "auto",
+      confirmations: 2
     },
     ropsten: {
       provider: function() {

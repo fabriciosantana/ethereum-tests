@@ -4,3 +4,6 @@ node_modules/
 .vscode/
 yarn.lock
 package-lock.json
+artifacts
+build
+cache
