@@ -1,4 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -23,13 +26,13 @@ module.exports = {
 
     },
     kovan: {
-      url: "https://kovan.infura.io/v3/c6694c8069784d1e90309bed25d0743d",
+      url: `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
       chainId: 42,
-      from: "0x82b1BF154B55eCC5E45c7E24a6283da06368000D",
+      from: `https://kovan.infura.io/v3/${process.env.FROM_ADDRESS}`,
       gas: "auto",
       gasPrice: "auto",
       loggingEnabled: "false",
-      accounts: ["0x30be48c30f3d9ec1a4fe78c72696dd87338ba2f397d809e81e0a9117f0542c53"]
+      accounts: [`${process.env.PRIVATE_KEY}`]
     }
   },
   solidity: {
