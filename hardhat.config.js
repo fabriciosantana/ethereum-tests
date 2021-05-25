@@ -28,7 +28,7 @@ module.exports = {
     kovan: {
       url: `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
       chainId: 42,
-      from: `https://kovan.infura.io/v3/${process.env.FROM_ADDRESS}`,
+      from: `${process.env.FROM_ADDRESS}`,
       gas: "auto",
       gasPrice: "auto",
       loggingEnabled: "false",
